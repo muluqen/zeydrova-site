@@ -1,15 +1,22 @@
-/* Navbar */
+/* Navbar Container */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #0f172a; /* Deep Navy */
+  background-color: #0f172a;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-family: 'Poppins', sans-serif;
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
+}
+
+/* Inner Container */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Logo */
@@ -28,11 +35,25 @@
 .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #3b82f6; /* Electric Blue */
+  color: #3b82f6;
 }
 
-/* Navbar Links */
-.nav-main ul.navbar-links {
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #e2e8f0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navigation */
+.nav-main {
+  display: flex;
+}
+
+.navbar-links {
   list-style: none;
   display: flex;
   gap: 2rem;
@@ -40,35 +61,61 @@
   padding: 0;
 }
 
-.nav-main ul.navbar-links li a {
+.navbar-links li a {
   text-decoration: none;
   font-weight: 600;
-  color: #e2e8f0; /* Soft Gray */
+  color: #e2e8f0;
   font-size: 1rem;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.nav-main ul.navbar-links li a:hover,
-.nav-main ul.navbar-links li a:focus {
-  color: #60a5fa; /* Lighter Electric Blue */
+.navbar-links li a:hover,
+.navbar-links li a:focus {
+  color: #60a5fa;
   transform: translateY(-2px);
 }
 
-/* Responsive for small screens */
+/* Mobile Styles */
 @media (max-width: 768px) {
-  .nav-main ul.navbar-links {
+  .navbar .container {
     flex-direction: column;
-    gap: 1rem;
-    background-color: #0f172a;
+    align-items: flex-start;
     padding: 1rem;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    display: none; /* Can toggle with JS for mobile menu */
-    border-radius: 0 0 8px 8px;
   }
-  .nav-main ul.navbar-links.show {
+
+  .hamburger {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-main {
+    width: 100%;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .navbar-links.show {
     display: flex;
+  }
+
+  .navbar-links li a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    background-color: #1e293b;
+    box-sizing: border-box;
+  }
+
+  .navbar-links li a:hover {
+    background-color: #334155;
+    color: #60a5fa;
   }
 }

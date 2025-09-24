@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zeydrova – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/hero.css">
+  <link rel="stylesheet" href="../assets/css/portfolio.css">
+  <link rel="stylesheet" href="../assets/css/services.css">
+  <link rel="stylesheet" href="../assets/css/about.css">
+  <link rel="stylesheet" href="../assets/css/contact.css">
+  <link rel="stylesheet" href="../assets/css/messages.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/cards.css">
+
+  <!-- Smooth Scroll -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section containers -->
+  <div id="navbar"></div>
+  <div id="hero"></div>
+  <div id="about"></div>
+  <div id="footer"></div>
+
+  <!-- Dynamic includes -->
+  <script>
+    const load = (id, file) => {
+      return fetch(file)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+
+          // Activate hamburger toggle after navbar loads
+          if (id === "navbar") {
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".navbar-links");
+
+            if (hamburger && navLinks) {
+              hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("show");
+              });
+            }
+          }
+        })
+        .catch(err => console.error(`Error loading ${file}:`, err));
+    };
+
+    // Load all sections, then scroll to anchor if present
+    window.addEventListener("DOMContentLoaded", async () => {
+      await Promise.all([
+        load("navbar", "../components/navbar.html"),
+        load("hero", "../components/hero.html"),
+        load("about", "../pages/about/index.html"),
+        load("footer", "../components/footer.html")
+      ]);
+
+      // Scroll to anchor after content loads
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  </script>
+
+  <!-- JS -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
