@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – Zeydrova</title>
+  <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/contact.css">
+</head>
+<body>
+
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <!-- Back Button (Styled like Services) -->
+      <div style="text-align: right; margin-bottom: 2rem;">
+        <a href="../index.html" class="btn-back-home">← Back to Home</a>
+      </div>
+
+      <h2>Contact Us</h2>
+      <p>Or message me directly on Telegram: <a href="https://t.me/Zeydrova" target="_blank">@Zeydrova</a></p>
+
+      <!-- Success Message -->
+      <div id="contact-success" class="success-msg" style="display: none;">
+        <h3>✅ Message Sent Successfully</h3>
+        <p>Thank you for reaching out to Zeydrova. Your message has been delivered to our Telegram inbox.</p>
+        <p>We’ll review it shortly and respond via Telegram. Please keep your Telegram line open so we can connect with you.</p>
+        <p>If you don’t hear back within 36 hours, it may be due to an incorrect username or inactive account. Feel free to resend your message if needed.</p>
+        <p>We appreciate your patience and look forward to chatting soon!</p>
+      </div>
+
+      <!-- Telegram-integrated Form -->
+      <form id="contact-form" autocomplete="off">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="telegram" placeholder="Your Telegram account e.g. @Zeydrova" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- External JS -->
+  <script src="../assets/js/contact.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+/* Portfolio Section */
+.portfolio {
+  padding: 5rem 2rem;
+  background: url('../images/portfolio.png') no-repeat center center;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #f8fafc;
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay for Readability */
+.portfolio::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  z-index: 0;
+}
+.portfolio > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Heading & Paragraph */
+.portfolio h2,
+.portfolio p {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 1rem auto;
+  color: #f8fafc;
+}
+
+.portfolio h2 {
+  font-size: clamp(2.2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.6px;
+}
+
+.portfolio p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #cbd5e1;
+  margin-bottom: 3rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid Layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* Card Wrapper */
+.tooltip-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Card */
+.portfolio-grid .card {
+  position: relative;
+  background-color: rgba(30, 41, 59, 0.95);
+  border-radius: 12px;
+  text-align: center;
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid #334155;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-grid .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* Card Image */
+.portfolio-grid .card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #475569;
+}
+
+/* Card Title */
+.portfolio-grid .card h3 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  text-align: left;
+  line-height: 1.5;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 20;
+}
+
+/* Show Tooltip on Hover */
+.tooltip-card:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Back Button */
+.btn-back-home {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #334155;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid #475569;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-back-home:hover {
+  background-color: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Page Border */
+body {
+  margin: 0;
+  background-color: #0f172a;
+  border: 8px solid #2a2f36;
+}

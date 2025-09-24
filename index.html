@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zeydrova – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/messages.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+</head>
+<body>
+
+  <!-- Section containers -->
+  <div id="navbar"></div>
+  <div id="hero"></div>
+  <div id="about"></div>
+  <div id="footer"></div>
+
+  <!-- Dynamic includes -->
+  <script>
+    const load = (id, file) => {
+      fetch(file)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+        })
+        .catch(err => console.error(`Error loading ${file}:`, err));
+    };
+
+    // Load components and section pages
+    load("navbar", "components/navbar.html");
+    load("hero", "components/hero.html");
+    load("about", "pages/about.html");
+    load("footer", "components/footer.html");
+  </script>
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

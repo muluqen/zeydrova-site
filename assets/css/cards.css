@@ -1,0 +1,42 @@
+.card {
+  position: relative;
+  width: 200px;
+  background: #fef6e4;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.tooltip-card {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background: #fef6e4;
+  color: #172c66;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.tooltip-card:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}

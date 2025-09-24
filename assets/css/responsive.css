@@ -1,0 +1,7 @@
+/* Responsive */
+@media(max-width:768px){
+    .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
