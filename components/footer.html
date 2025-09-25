@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Footer – Zeydrova</title>
-  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 
-  <!-- Essential styles only -->
-  <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/base.css">
+  <!-- Essential styles -->
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo">Zeydrova</div>
-      <div class="social-links">
-        <a href="#" target="_blank">Twitter</a>
-        <a href="#" target="_blank">LinkedIn</a>
-        <a href="#" target="_blank">Instagram</a>
-        <a href="https://t.me/Zeydrova" target="_blank">Telegram</a>
-      </div>
+      <div class="footer-logo" aria-label="Zeydrova Brand">Zeydrova</div>
+
+      <!-- Social Links -->
+      <nav class="social-links" aria-label="Social Media Links">
+        <a href="/pages/contact" aria-label="Twitter (Contact)"><i class="fab fa-twitter"></i></a>
+        <a href="/pages/contact" aria-label="LinkedIn (Contact)"><i class="fab fa-linkedin-in"></i></a>
+        <a href="/pages/contact" aria-label="Instagram (Contact)"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/Zeydrova" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      </nav>
+
       <p>&copy; 2025 Zeydrova. All rights reserved.</p>
     </div>
   </footer>

@@ -15,22 +15,25 @@
   <link rel="stylesheet" href="../../assets/css/contact.css">
   <link rel="stylesheet" href="../../assets/css/footer.css">
   <link rel="stylesheet" href="../../assets/css/responsive.css">
+
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
 
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
   <section id="contact" class="contact">
     <div class="container">
-
-      <!-- Back Button -->
-      <div style="text-align: right; margin-bottom: 2rem;">
-        <a href="/home" class="btn-back-home">← Back to Home</a>
-      </div>
-
-      <h2>Contact Us</h2>
-      <p>Or message me directly on Telegram: <a href="https://t.me/Zeydrova" target="_blank">@Zeydrova</a></p>
+      <h2 data-aos="fade-up">Contact Us</h2>
+      <p data-aos="fade-up" data-aos-delay="100">
+        Or message me directly on Telegram:
+        <a href="https://t.me/Zeydrova" target="_blank" class="telegram-handle">@Zeydrova</a>
+      </p>
 
       <!-- Success Message -->
-      <div id="contact-success" class="success-msg" style="display: none;">
+      <div id="contact-success" class="success-msg" style="display: none;" data-aos="fade-up" data-aos-delay="200">
         <h3>✅ Message Sent Successfully</h3>
         <p>Thank you for reaching out to Zeydrova. Your message has been delivered to our Telegram inbox.</p>
         <p>We’ll review it shortly and respond via Telegram. Please keep your Telegram line open so we can connect with you.</p>
@@ -39,17 +42,43 @@
       </div>
 
       <!-- Telegram-integrated Form -->
-      <form id="contact-form" autocomplete="off">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="text" name="telegram" placeholder="Your Telegram account e.g. @Zeydrova" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn-primary">Send Message</button>
+      <form id="contact-form" autocomplete="off" data-aos="fade-up" data-aos-delay="300">
+        <input type="text" name="name" placeholder="Your Name" required data-aos="fade-up" data-aos-delay="350">
+        <input type="text" name="telegram" placeholder="Your Telegram account e.g. @Zeydrova"
+               required pattern="^@[\w\d_]{5,}$"
+               title="Telegram handle must start with @ and be at least 6 characters."
+               data-aos="fade-up" data-aos-delay="400">
+        <textarea name="message" placeholder="Your Message" rows="5" required data-aos="fade-up" data-aos-delay="450"></textarea>
+        <button type="submit" class="btn-primary" data-aos="fade-up" data-aos-delay="500">Send Message</button>
+        <div id="contact-spinner" class="spinner" style="display: none;" data-aos="fade-up" data-aos-delay="520">
+  <div class="spinner-icon"></div>
+  <p>Sending message…</p>
+</div>
+
       </form>
     </div>
   </section>
 
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
   <!-- External JS -->
   <script src="../../assets/js/contact.js"></script>
+  <script>
+    // Inject navbar and footer
+    fetch('../../components/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+
+    fetch('../../components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+  <script src="/assets/js/main.js"></script>
+
+  <!-- AOS Animation Init -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 
 </body>
 </html>

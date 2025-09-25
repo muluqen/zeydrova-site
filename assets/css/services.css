@@ -24,7 +24,7 @@
 
 /* Heading & Intro */
 .services h2,
-.services p {
+.services p.services-intro {
   text-align: center;
   max-width: 720px;
   margin-left: auto;
@@ -40,7 +40,7 @@
   letter-spacing: 0.6px;
 }
 
-.services p {
+.services p.services-intro {
   font-size: 1.1rem;
   line-height: 1.75;
   color: #cbd5e1;
@@ -86,6 +86,12 @@
   color: #cbd5e1;
 }
 
+/* Price Highlight */
+.price-range {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
 /* Optional Button */
 .service-card a {
   display: inline-block;
@@ -108,24 +114,30 @@
   box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45);
 }
 
-/* Back to Home Button */
-.btn-back-home {
-  display: inline-block;
-  padding: 10px 18px;
-  background-color: #334155;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  border: 1px solid #475569;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+/* CTA Button */
+.services-cta {
+  text-align: center;
+  margin-top: 3rem;
 }
 
-.btn-back-home:hover,
-.btn-back-home:focus {
-  background-color: #475569;
+.btn-primary {
+  display: inline-block;
+  padding: 0.9rem 1.75rem;
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #2563eb;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.45);
 }
 
 /* Page Border */
@@ -133,4 +145,83 @@ body {
   margin: 0;
   background-color: #0f172a;
   border: 6px solid #2a2f36;
+}
+
+/* Overlay Slide Transition */
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #1e293b;
+  z-index: 9999;
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+body.transitioning .transition-overlay {
+  transform: translateX(0);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+  .services {
+    padding: 4rem 1.5rem;
+  }
+
+  .services h2 {
+    font-size: 2rem;
+  }
+
+  .services p.services-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .service-card {
+    padding: 1.8rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .service-card h3 i {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+}
+
+/* Icon Styling in Card Titles */
+.service-card h3 i {
+  margin-right: 0.6rem;
+  color: #60a5fa;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+/* AOS Animation Enhancements */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* CTA Button Glow on Hover */
+.btn-primary:hover {
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.6), 0 8px 28px rgba(37, 99, 235, 0.45);
 }

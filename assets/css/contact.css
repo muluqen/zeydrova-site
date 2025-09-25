@@ -14,7 +14,6 @@
 .contact h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: #f8fafc;
   margin-bottom: 1rem;
   letter-spacing: 0.5px;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
@@ -28,7 +27,7 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
 
-/* Form */
+/* Form Container */
 .contact form {
   max-width: 700px;
   margin: 0 auto;
@@ -51,7 +50,7 @@
 /* Inputs */
 .contact input,
 .contact textarea {
-  padding: 1.1rem 1.3rem;
+  padding: 1rem 1.2rem;
   border-radius: 10px;
   border: 1px solid #475569;
   background-color: #1e293b;
@@ -97,14 +96,12 @@
   background-color: #f0fdf4;
   border-left: 6px solid #22c55e;
   padding: 1.75rem 2rem;
-  margin-top: 3rem;
+  margin: 3rem auto 0;
   border-radius: 12px;
   font-family: 'Nunito', sans-serif;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   animation: fadeIn 0.4s ease-in-out;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: left;
 }
 
@@ -154,4 +151,87 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .contact {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .contact form {
+    padding: 2rem 1.2rem;
+    border-radius: 16px;
+  }
+
+  .contact input,
+  .contact textarea {
+    font-size: 0.95rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .contact button {
+    font-size: 0.95rem;
+    padding: 0.9rem 1.4rem;
+  }
+
+  .success-msg {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .success-msg h3 {
+    font-size: 1.25rem;
+  }
+
+  .btn-back-home {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.4rem;
+  }
+}
+/* Telegram Handle Highlight */
+.telegram-handle {
+  color: #a78bfa;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.telegram-handle:hover,
+.telegram-handle:focus {
+  color: #c4b5fd;
+  text-shadow: 0 0 8px rgba(167, 139, 250, 0.6);
+}
+/* Loading Spinner */
+.spinner {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spinner-icon {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #a78bfa;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
